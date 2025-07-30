@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './App.css'
 
 function App() {
@@ -6,14 +7,9 @@ function App() {
   const [response , setresponse] = useState('');
 
   async function handleSubmit () {
-      const res = await fetch('http://localhost:8080/process' , {
-        method : "POST",
-        headers: {"content-type" : "application/json"},
-        body : JSON.stringify({word}),
-      });
-
-      const data = await res.json();
-      setresponse(data.result);
+    const res = await axios.post('http://localhost:8080/api/autocorrect/process', { word });
+    const data = res.data.data;
+    setresponse(data);
   }
 
   return (
@@ -21,7 +17,7 @@ function App() {
     <h1 className='heading' style={{fontFamily:"American Typewriter"}}>Welcome to Word-Help</h1>
     <div className= 'container' >
       <input className="input-field" placeholder='Enter a word...' value = {word} onChange={(e) =>{setWord(e.target.value); }}></input>
-      <button type="button" class="btn btn-primary btn-lg custom" onClick={handleSubmit}>Submit</button>
+      <button type="button" className="btn btn-primary btn-lg custom" onClick={handleSubmit}>Submit</button>
     </div>
     <div className='response'>
         {response && <p>{response}</p>}
