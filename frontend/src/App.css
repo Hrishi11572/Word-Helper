@@ -1,0 +1,59 @@
+/* Centering via body */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+  background-color: gray;
+}
+
+/* Your centered div */
+.container {
+  width: 100vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input-field {
+  width: 700px;
+  height: 80px;
+  font-size: 32px;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 18px;
+  outline: none;
+  background-color: #f0f4f8;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(51, 51, 51, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #a0aab8;
+  font-style: italic;
+}
+
+.input-field:focus {
+  background-color: #ffffff;
+  box-shadow: 0 6px 24px rgba(74, 144, 226, 0.25);
+  border: 2px solid #4a90e2;
+}
+
+.heading {
+    text-align: center;
+    font-size: 100px;
+}
+
+.response{
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+}
+
+.custom {
+  width : 200px; 
+  height : 75px;
+}
