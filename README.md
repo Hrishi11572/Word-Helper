@@ -93,7 +93,7 @@ Word-Helper-main/
 
 ## Demo 
 
-![Demo] (Demo.png)
+![Demo](Demo.png)
 
 ## License
 
